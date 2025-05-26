@@ -1,10 +1,14 @@
 {
   "name": "esp32-ws-server",
   "version": "1.0.0",
+  "description": "WebSocket server for ESP32 sensor data",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "keywords": ["websocket", "esp32", "render", "sensor"],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
     "ws": "^8.0.0"
   }
