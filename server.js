@@ -19,5 +19,6 @@ wss.on('connection', (ws) => {
 
 const PORT = process.env.PORT || 10000;
 server.listen(PORT, () => {
-  console.log(`WebSocket Server running on port ${PORT}`);
+  console.log(`WebSocket Server listening on port ${PORT}`);
 });
+
