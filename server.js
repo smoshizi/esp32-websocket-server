@@ -1,25 +1,21 @@
 // server.js
 const WebSocket = require('ws');
-const express = require('express');
-const app = express();
-const server = require('http').createServer(app);
+const server = require('http').createServer();
 
-const PORT = process.env.PORT || 10000;
 const wss = new WebSocket.Server({ server });
 
 wss.on('connection', (ws) => {
-  console.log("Client connected");
+  console.log("ESP32 connected");
 
-  ws.on('message', (msg) => {
-    console.log("Received:", msg.toString());
+  ws.on('message', (message) => {
+    console.log("Received:", message.toString());
   });
 
   ws.on('close', () => {
-    console.log("Client disconnected");
+    console.log("ESP32 disconnected");
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`WebSocket Server running on port ${PORT}`);
+server.listen(81, () => {
+  console.log("WebSocket Server listening on port 81");
 });
-
